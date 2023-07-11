@@ -1,0 +1,72 @@
+body {
+    margin: 0 auto ;
+} 
+
+header{
+    background-image: url("burger.png");
+    width: 600px;
+    color: #fff;
+    display: flex;
+    background-repeat: no-repeat;
+    flex-direction: column;
+}
+h1{
+    color: #FFF;
+    font-family: "Smythe";
+    font-size: 39px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 50px auto 10px 46px;
+}
+h3{
+    color: #FFF;
+    font-family: "Smythe";
+    font-size: 22.422px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 13.798px;
+    margin: 20px auto 20px 46px;
+}
+#menu-item{
+    padding: 50 31 50 46;
+    display: flex;
+    border-bottom: #000 solid 1px;
+    width: 550px;
+}
+#img{
+    color: #000;
+    text-align: center;
+    font-size: 78.72px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 98.4px;
+    margin-right: 31;
+}
+#diner-name,
+#diner-price{
+    max-width: 8;
+    color: #000;
+    font-family: "Smythe";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16.8px;
+    margin: 8 0;
+}
+#diner-includes{
+    color: #8B8B8B;
+    font-family: "Smythe";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+button{
+    margin: auto 60 auto auto;
+    width: 50;
+    height: 50;
+    border-radius: 50%;
+    border: #8B8B8B 1px solid;
+
+}
