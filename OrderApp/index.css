@@ -1,5 +1,6 @@
 body {
     margin: 0 auto ;
+    width: 600;
 } 
 
 header{
@@ -18,6 +19,9 @@ h1{
     font-weight: 400;
     line-height: 24px;
     margin: 50px auto 10px 46px;
+}
+h2{
+    text-align: center;
 }
 h3{
     color: #FFF;
@@ -69,4 +73,26 @@ button{
     border-radius: 50%;
     border: #8B8B8B 1px solid;
 
+}
+#added-items{
+    color: #000;
+font-family: Smythe;
+font-size: 28px;
+font-style: normal;
+font-weight: 400;
+line-height: 16.8px;
+}
+span{
+    color: #BBB;
+font-family: Verdana;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+}
+#order-menu{
+    display: flex;
+    justify-content: space-between;
+    padding: 10 30;
+    border-bottom: 1px solid #393333;
 }
