@@ -1,11 +1,8 @@
-import { menuArray } from "/OrderApp/data.js";
+import { menuArray } from '/data.js'
 
-const main = document.getElementById("main");
-const orderList = document.getElementById("order-list");
-const totalPrice = document.getElementById("total-price");
+const main = document.getElementById("main")
 
-function render() {
-  menuArray.forEach((menuItem) => {
+menuArray.forEach(menuItem => {
     main.innerHTML += `
     <div id="menu-item" >
                 <div id="img">${menuItem.emoji}</div>
@@ -14,7 +11,7 @@ function render() {
                     <div  id="diner-includes">${menuItem.ingredients}</div>
                     <div  id="diner-price">$${menuItem.price}</div>
                 </div>
-                <button id="btn" data-id="${menuItem.id}">+</button>
+                <button id="add-item">+</button>
             </div>
     `;
   });
@@ -50,16 +47,4 @@ function addOrder(menuItem){
       </div>
 
     `
-    totalPrices(menuItem.price)
-}
-
-function totalPrices(price) {
-let total = price;
-for (let i = 0; i < orders.length; i++) {
-  total += orders[i].price;
-}
-
-totalPrice.innerHTML = `
-    <div id="total">Total: $${total}</div>
-`
-}
+});

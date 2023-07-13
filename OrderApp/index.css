@@ -1,7 +1,6 @@
 body {
-  width: 600px;
-  margin: 0 auto;
-}
+    margin: 0 auto ;
+} 
 
 header {
   background-image: url("burger.png");
@@ -20,17 +19,14 @@ h1 {
   line-height: 24px;
   margin: 50px auto 10px 46px;
 }
-h2 {
-  text-align: center;
-}
-h3 {
-  color: #fff;
-  font-family: "Smythe";
-  font-size: 22.422px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 13.798px;
-  margin: 20px auto 20px 46px;
+h3{
+    color: #FFF;
+    font-family: "Smythe";
+    font-size: 22.422px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 13.798px;
+    margin: 20px auto 20px 46px;
 }
 #menu-item {
   padding: 50 31 50 46;
@@ -114,4 +110,26 @@ span{
 span:hover{
   color: #000;
   cursor: pointer;
+}
+#added-items{
+    color: #000;
+font-family: Smythe;
+font-size: 28px;
+font-style: normal;
+font-weight: 400;
+line-height: 16.8px;
+}
+span{
+    color: #BBB;
+font-family: Verdana;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+}
+#order-menu{
+    display: flex;
+    justify-content: space-between;
+    padding: 10 30;
+    border-bottom: 1px solid #393333;
 }

@@ -1,25 +1,22 @@
 <html>
-  <head>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
-    />
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Jimmy’s Diner</h1>
-      <h3>The best burgers and pizzas in town.</h3>
-    </header>
-    <section id="main"></section>
-    <div class="order-list" id="order-list">
-      <h2>Your Order</h2>
-      
-    </div>
-    <div id="total-price">
-      Total price:
-      <div id="total"></div>
-    </div>
-    <script src="index.js" type="module" defer></script>
-  </body>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+       <link rel="stylesheet" href="index.css">
+       
+    </head>
+    <body>
+        <header >
+            <h1>Jimmy’s Diner</h1>
+            <h3>The best burgers and pizzas in town.</h3>
+        </header>
+        <section id="main">
+            
+        </section>
+        <div id="order-list" class="hidden">
+            <h2 >Your Order</h2>
+            <div id="order-menu">
+            <div id="added-items"></div>
+            <div id="added-price"></div>
+        </div>
+	<script src="index.js" type="module" defer></script>
+    </body>
 </html>
