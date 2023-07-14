@@ -1,5 +1,6 @@
 body {
     margin: 0 auto ;
+    width: 600px;
 } 
 
 header {
@@ -18,6 +19,16 @@ h1 {
   font-weight: 400;
   line-height: 24px;
   margin: 50px auto 10px 46px;
+}
+h2{
+    color: #350b0b;
+    font-family: "Smythe";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16.8px;
+    margin: 10px auto 10px 46px;
+    text-align: center;
 }
 h3{
     color: #FFF;
@@ -73,19 +84,15 @@ button {
   display: flex;
   justify-content: space-between;
   padding: 30px 30px;
-  border-bottom: 1px solid #393333;
   margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10 30;
 }
-span {
-  color: #bbb;
-  font-family: Verdana;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-}
+
 #added-items,
-#added-price {
+#added-price,
+#cost {
   color: #000;
   font-family: Smythe;
   font-size: 28px;
@@ -99,18 +106,6 @@ span {
   padding: 30px 30px;
   margin-bottom: 30px;
 }
-span{
-  color: #bbb;
-  font-family: Verdana;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-}
-span:hover{
-  color: #000;
-  cursor: pointer;
-}
 #added-items{
     color: #000;
 font-family: Smythe;
@@ -119,17 +114,44 @@ font-style: normal;
 font-weight: 400;
 line-height: 16.8px;
 }
-span{
+#remove{
     color: #BBB;
 font-family: Verdana;
 font-size: 12px;
 font-style: normal;
 font-weight: 400;
 line-height: 24px;
+cursor: pointer;
 }
-#order-menu{
-    display: flex;
-    justify-content: space-between;
-    padding: 10 30;
-    border-bottom: 1px solid #393333;
+#remove:hover{
+    color: #a59393;
+}
+
+
+#order-list{
+  border-bottom: #000 solid 1px;
+margin: 40px 0 10px 0;
+}
+
+
+#total-cost{
+  display: flex;
+justify-content: space-between;
+padding: 30px 30px;
+}
+#payment{
+ 
+background-color: lime;
+margin-bottom: 10px;
+cursor: pointer;
+}
+#click-for-pay{
+  color: #FFF;
+font-family: Smythe;
+font-size: 28px;
+text-align: center;
+padding-bottom: 20px;
+}
+.hidden{
+  display: none;
 }

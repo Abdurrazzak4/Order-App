@@ -1,6 +1,7 @@
-import { menuArray } from '/data.js'
+import { menuArray } from '/OrderApp/data.js'
 
 const main = document.getElementById("main")
+const orderList = document.getElementById("order-list")
 
 menuArray.forEach(menuItem => {
     main.innerHTML += `
@@ -11,40 +12,75 @@ menuArray.forEach(menuItem => {
                     <div  id="diner-includes">${menuItem.ingredients}</div>
                     <div  id="diner-price">$${menuItem.price}</div>
                 </div>
-                <button id="add-item">+</button>
+                <button id="btn" data-id=${menuItem.id}>+</button>
             </div>
     `;
   });
-}
-render();
+
 
 document.addEventListener("click", (e)=>{
     if(e.target.id === "btn")
     handleBtnClicked(e.target.dataset.id)
-    if(e.target.tagName === "SPAN"){
+    if(e.target.id === "remove"){
+      ordersArray.pop()
+      handleRemove()
+      console.log(ordersArray);
         e.target.parentElement.parentElement.remove()
-        totalPrices(0)
     }
 })
-const orders = []
+const ordersArray = []
+
+
 function handleBtnClicked(id){
+  const payment = document.getElementById("payment")
     const matchedId = menuArray.filter((menu)=>{
        return (menu.id === parseInt(id)); 
     })[0]
     addOrder(matchedId)
-    orders.push(matchedId)
     
+      payment.classList.remove("hidden")
+      orderList.classList.remove("hidden")
+      
+    ordersArray.push(matchedId)
+    handlePayment()
     
-    console.log(orders);
 }
+function handleRemove(){
+  if(ordersArray.length === 0){
+    payment.classList.add("hidden")
+      orderList.classList.add("hidden")
+    }
+
+    // ordersArray.forEach((order)=>{
+    //   if(order.id === parseInt(id)){
+    //     ordersArray.pop(order)
+    //   }
+    // })
+
+
+
+
+    handlePayment()
+  }
 
 function addOrder(menuItem){
     orderList.innerHTML += `
     
       <div id="order-menu">
-        <div id="added-items">${menuItem.name} <span>remove</span></div>
+        <div id="added-items">${menuItem.name} <span id="remove">remove</span></div>
         <div id="added-price">$${menuItem.price}</div>
       </div>
 
     `
-});
+};
+
+function handlePayment(){
+
+const cost = document.getElementById("cost")
+const total = ordersArray.reduce((acc, order)=>{
+  return acc + order.price
+}, 0)
+cost.innerHTML = `$${total}`
+console.log(total);
+
+}
