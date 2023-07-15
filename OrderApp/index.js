@@ -22,10 +22,17 @@ document.addEventListener("click", (e) => {
     handleBtnClicked(e.target.dataset.id);
   }
   if (e.target.id === "remove") {
-    ordersArray.pop();
+    // ordersArray.pop();
     handleRemove();
-    console.log(ordersArray);
     e.target.parentElement.parentElement.remove();
+    let popId = e.target.parentElement.dataset.id;
+    ordersArray.forEach((order) => {
+      if (order.id === parseInt(popId)) {
+        ordersArray.pop(order);
+      }
+    }
+    );
+    
   }
   if (e.target.id === "total-cost" || e.target.id === "click-for-pay") {
     document.getElementById("cardForm").style.display = "block";
@@ -50,7 +57,7 @@ function handleBtnClicked(id) {
   handlePayment();
 }
 function handleRemove() {
-  if (ordersArray.length === 0) {
+  if (!ordersArray.length) {
     payment.classList.add("hidden");
     orderList.classList.add("hidden");
   }
@@ -68,7 +75,7 @@ function addOrder(menuItem) {
   orderList.innerHTML += `
     
       <div id="order-menu">
-        <div id="added-items">${menuItem.name} <span id="remove">remove</span></div>
+        <div id="added-items"  data-id=${menuItem.id}>${menuItem.name} <span id="remove">remove</span></div>
         <div id="added-price">$${menuItem.price}</div>
       </div>
 
@@ -81,5 +88,4 @@ function handlePayment() {
     return acc + order.price;
   }, 0);
   cost.innerHTML = `$${total}`;
-  console.log(total);
 }
