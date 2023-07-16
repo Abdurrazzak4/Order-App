@@ -17,30 +17,42 @@ menuArray.forEach((menuItem) => {
     `;
 });
 
+
+// Click events 
+
 document.addEventListener("click", (e) => {
+  e.preventDefault();
   if (e.target.id === "btn") {
     handleBtnClicked(e.target.dataset.id);
   }
   if (e.target.id === "remove") {
     // ordersArray.pop();
-    handleRemove();
+    handleRemove(0);
     e.target.parentElement.parentElement.remove();
     let popId = e.target.parentElement.dataset.id;
-    ordersArray.forEach((order) => {
-      if (order.id === parseInt(popId)) {
-        ordersArray.pop(order);
-      }
+    let popIndex = ordersArray.findIndex((order) => {
+      return order.id === parseInt(popId);
     }
     );
-    
+    ordersArray.splice(popIndex, 1);
+    handlePayment();
   }
+
+
   if (e.target.id === "total-cost" || e.target.id === "click-for-pay") {
     document.getElementById("cardForm").style.display = "block";
   }
   if (e.target.id === "close") {
     document.getElementById("cardForm").style.display = "none";
   }
+  if (e.target.id === "submitBtn") {
+    handleSubmit();
+  }
+
+
 });
+
+
 const ordersArray = [];
 
 function handleBtnClicked(id) {
@@ -62,12 +74,6 @@ function handleRemove() {
     orderList.classList.add("hidden");
   }
 
-  // ordersArray.forEach((order)=>{
-  //   if(order.id === parseInt(id)){
-  //     ordersArray.pop(order)
-  //   }
-  // })
-
   handlePayment();
 }
 
@@ -88,4 +94,12 @@ function handlePayment() {
     return acc + order.price;
   }, 0);
   cost.innerHTML = `$${total}`;
+}
+
+function handleSubmit() {
+  document.getElementById("cardForm").style.display = "none";
+    document.getElementById("payment").style.display = "none";
+    document.getElementById("order-list").style.display = "none";
+    document.getElementById("pay-success").style.display = "block";
+    document.getElementById("customer-name").innerHTML = document.getElementById("name").value;
 }

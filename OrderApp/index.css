@@ -227,3 +227,16 @@ form div {
   justify-content: center;
   align-items: center;
 }
+
+#pay-success{
+  background-color: lime;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 25 ;
+  text-align: center;
+  margin-top: 10px;
+  display: none;
+}
+#customer-name{
+  color: #741593;
+}
